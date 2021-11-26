@@ -1,23 +1,24 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class doWhile {
     
     public static void main(String[] args) {
 
+        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double temp = 0;
         char condicao = ' ';
 
         do {
             System.out.println("Digite a temperatura em Celsius: ");
-            temp = sc.nextDouble();
+            double temp = sc.nextDouble();
             temp = ((temp * 9) / 5) + 32;
-            System.out.printf("Equivalente em Fahrenheit: %.1f", temp);
+            System.out.printf("Equivalente em Fahrenheit: %.1f%n", temp);
             System.out.println("Deseja repetir (s/n)?");
-            sc.next().charAt(0);
+            condicao = sc.next().charAt(0);
 
-        } while (condicao != 's');
+        } while (condicao != 'n');
 
         sc.close();
     }
